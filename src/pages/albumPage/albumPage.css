@@ -1,0 +1,27 @@
+.albumPageContainer{
+    background-color: white;
+    margin-top: 15px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.photoInput {
+    width: 100%; 
+    font-size: 16px;
+    padding: 12px 20px 12px 20px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px;
+    margin-top: 12px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
