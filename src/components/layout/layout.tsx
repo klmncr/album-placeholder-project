@@ -3,7 +3,7 @@ import '../layout/layout.css'
 
 export default function Layout() {
 
-    const setActive = ({ isActive }) => isActive ? 'activeLink' : '';
+    const setActive = ( { isActive } : {isActive: boolean} ) => isActive ? 'activeLink' : '';
 
     return (
         <>
@@ -17,8 +17,8 @@ export default function Layout() {
                         <NavLink to='/contacts' className={setActive}>Contacts</NavLink>
                     </div>
                 </div>
-                <Outlet />
             </header>
+            <Outlet />
         </>
     )
 }
