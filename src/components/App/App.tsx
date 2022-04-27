@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AlbumPage from "./pages/albumPage";
-import AlbumsPage from "./pages/albumsPage";
-import Layout from "./components/layout/layout";
-import HomePage from "./pages/homePage/homePage";
-import AboutPage from "./pages/aboutPage/aboutPage";
-import ContactsPage from "./pages/contactsPage/contactsPage";
+import AlbumPage from "../albumPage/albumPage";
+import AlbumsPage from "../albumsPage/albumsPage";
+import Layout from "../layout/layout";
+import HomePage from "../homePage/homePage"
+import AboutPage from "../aboutPage/aboutPage"
+import ContactsPage from "../contactsPage/contactsPage";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "../../redux/store";
+
 
 export default function App() {
 
@@ -15,7 +16,7 @@ export default function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route to='/home' element={<Layout />}>
+            <Route path='/' element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="albums" element={<AlbumsPage />} />
               <Route path="albums/:id" element={<AlbumPage />} />
@@ -28,5 +29,4 @@ export default function App() {
     </div>
   );
 }
-
 

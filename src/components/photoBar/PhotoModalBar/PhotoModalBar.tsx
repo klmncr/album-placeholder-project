@@ -1,7 +1,14 @@
+import { FC } from 'react';
 import '../PhotoModalBar/PhotoModalBar.css'
 
-export default function PhotoModalBar({ url, title, handle }) {
+interface PhotoModalBarProps {
+    url: string;
+    title: string;
+    handle: () => void;
+}
 
+const PhotoModalBar: FC<PhotoModalBarProps> = ({ url, title, handle }) => {
+    
     return (
         <div className="modal" onClick={handle}>
             <span className="close" onClick={handle}>&times;</span>
@@ -10,3 +17,5 @@ export default function PhotoModalBar({ url, title, handle }) {
         </div>
     )
 }
+
+export default PhotoModalBar;

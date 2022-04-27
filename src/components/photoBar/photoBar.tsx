@@ -1,16 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../photoBar/photoBar.css'
 import PhotoModalBar from './PhotoModalBar/PhotoModalBar';
+import { FC } from 'react'
 
-export default function PhotoBar({ url, title }) {
+interface PtohoBarProps {
+    url: string;
+    title: string;
+}
 
-    const [modal, setModal] = useState([]);
-    useEffect(() => setModal(false), []);
+const PhotoBar: FC<PtohoBarProps> = ({ url, title }) => {
+
+    const [modal, setModal] = useState(false);
 
     const handlePhotoModalBar = () => {
         setModal(!modal);
     };
-    
+
     return (
         <div className='containerPhoto'>
             <img src={url} alt='This is not allowed' onClick={handlePhotoModalBar}></img>
@@ -21,3 +26,5 @@ export default function PhotoBar({ url, title }) {
         </div>
     )
 }
+
+export default PhotoBar;
